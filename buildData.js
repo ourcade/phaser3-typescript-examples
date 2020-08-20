@@ -53,9 +53,9 @@ const processDirectory = (dir, outDir) => {
 			}
 
 			data.files.push({
-				name: file.name,
+				name: file.name.replace(file.extension, ''),
 				contents: LZString.compressToBase64(contents),
-				path: file.path.replace(child.path, 'src'),
+				path: file.path.replace(child.path, 'src').replace(file.name, ''),
 				extension: (file.extension || '').replace('.', '')
 			})
 		})
