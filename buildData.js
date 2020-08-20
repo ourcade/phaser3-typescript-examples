@@ -38,10 +38,19 @@ const processDirectory = (dir, outDir) => {
 
 		const data = {
 			files: [],
+			assets: [],
 			entryPoint: 'main.ts'
 		}
+
 		files.forEach(file => {
 			const contents = fs.readFileSync(file.path, { encoding: 'utf-8' })
+
+			if (file.name === '.assets')
+			{
+				const assets = contents.split('\n').filter(item => !!item)
+				data.assets = [...data.assets, ...assets]
+				return
+			}
 
 			data.files.push({
 				name: file.name,
