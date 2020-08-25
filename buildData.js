@@ -16,8 +16,9 @@ const isExampleRoot = (dir) => {
 /**
  * @param {directoryTree.DirectoryTree} dir 
  * @param {string} outDir
+ * @param {{ groups: [], examples: [] }} manifest
  */
-const processDirectory = (dir, outDir) => {
+const processDirectory = (dir, outDir, manifest) => {
 	const children = dir.children || []
 	for (let i = 0; i < children.length; ++i)
 	{
@@ -27,11 +28,21 @@ const processDirectory = (dir, outDir) => {
 			continue
 		}
 
+		const group = {
+			name: child.name
+		}
+
 		if (!isExampleRoot(child))
 		{
-			processDirectory(child, outDir)
+			manifest.groups.push(Object.assign(group, {
+				groups: [],
+				examples: []
+			}))
+			processDirectory(child, outDir, group)
 			continue
 		}
+
+		manifest.examples.push(group)
 
 		const key = child.path.replace(/\//g, ':')
 		const files = child.children || []
@@ -63,12 +74,20 @@ const processDirectory = (dir, outDir) => {
 		const destinationDir = path.join(outDir, key)
 		fs.ensureDirSync(destinationDir)
 		fs.writeJSONSync(path.join(destinationDir, 'data.json'), data, { spaces: '\t' })
+
+		group.example = key
 	}
 }
 
 const srcDir = dirTree('src', { exclude: [/.DS_Store/] })
 
 const outDir = 'outputData'
+const manifest = {
+	groups: [],
+	examples: []
+}
 
-processDirectory(srcDir, outDir)
+processDirectory(srcDir, outDir, manifest)
 
+fs.ensureDirSync(outDir)
+fs.writeJSONSync(path.join(outDir, 'manifest.json'), manifest, { spaces: '\t' })
