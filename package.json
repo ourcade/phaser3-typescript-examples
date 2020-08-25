@@ -6,6 +6,7 @@
 		"start": "parcel src/${EXAMPLE:-'actions/grid-align'}/index.html -p 8000",
 		"build": "parcel build src/${EXAMPLE:-'actions/grid-align'}/index.html --out-dir dist",
 		"build-data": "node buildData.js",
+		"new-example": "node newExample.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint ./src --ext .js,.jsx,.ts,.tsx"
 	},
@@ -19,6 +20,7 @@
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^2.29.0",
 		"@typescript-eslint/parser": "^2.29.0",
+		"commander": "^6.0.0",
 		"directory-tree": "^2.2.4",
 		"eslint": "^6.8.0",
 		"fs-extra": "^9.0.1",
