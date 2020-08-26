@@ -8,7 +8,10 @@ const config: Phaser.Types.Core.GameConfig = {
     height: 600,
     backgroundColor: '#2d2d2d',
     parent: 'phaser-example',
-    scene: [PlaceOnRectangleShift]
+    scene: [PlaceOnRectangleShift],
+	scale: {
+		mode: Phaser.Scale.ScaleModes.FIT
+	}
 }
 
 export default new Phaser.Game(config)

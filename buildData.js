@@ -50,7 +50,8 @@ const processDirectory = (dir, outDir, manifest) => {
 		const data = {
 			files: [],
 			assets: [],
-			entryPoint: 'main.ts'
+			entryPoint: 'main.ts',
+			showFirst: 'main.ts'
 		}
 
 		files.forEach(file => {
@@ -61,6 +62,15 @@ const processDirectory = (dir, outDir, manifest) => {
 				const assets = contents.split('\n').filter(item => !!item)
 				data.assets = [...data.assets, ...assets]
 				return
+			}
+
+			// set something other than main.ts as file to show
+			if (file.name !== 'main.ts' && file.extension === '.ts')
+			{
+				if (data.showFirst === 'main.ts')
+				{
+					data.showFirst = file.name
+				}
 			}
 
 			data.files.push({
