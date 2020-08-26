@@ -11,6 +11,9 @@ export default class AddAnimationEvent extends Phaser.Scene
 
 	create()
 	{
+		this.add.text(this.scale.width * 0.5, 50, 'Click to Add')
+			.setOrigin(0.5)
+
 		//  Each time a new animation is added to the Animation Manager we'll call this function
 		this.anims.on(Phaser.Animations.Events.ADD_ANIMATION, this.addAnimation, this)
 
