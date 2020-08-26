@@ -25,7 +25,6 @@ const indexHtml = `<html>
 	<script src="main.ts"></script>
 </body>
 </html>
-
 `
 
 const className = name.split('-').map(capitalize).join('')
@@ -44,7 +43,6 @@ const config: Phaser.Types.Core.GameConfig = {
 }
 
 export default new Phaser.Game(config)
-
 `
 
 const sceneTS = `import Phaser from 'phaser'
@@ -63,7 +61,6 @@ export default class ${className} extends Phaser.Scene
 	{
 	}
 }
-
 `
 
 const destination = path.join(program.destination, name)
@@ -73,5 +70,6 @@ fs.ensureDirSync(destination)
 fs.writeFileSync(path.join(destination, 'index.html'), indexHtml)
 fs.writeFileSync(path.join(destination, 'main.ts'), mainTS)
 fs.writeFileSync(path.join(destination, `${className}.ts`), sceneTS)
+fs.writeFileSync(path.join(destination, '.assets'), '')
 
 console.log(`✅ New example ${name} created.`)
