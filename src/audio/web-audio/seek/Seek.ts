@@ -4,7 +4,7 @@ import dat from 'dat.gui'
 
 export default class Seek extends Phaser.Scene
 {
-	private catAstroPhi!: Phaser.Sound.HTML5AudioSound
+	private catAstroPhi!: Phaser.Sound.WebAudioSound
 	private rainbowMask!: Phaser.GameObjects.Graphics
 	private cat!: Phaser.GameObjects.Sprite
 
@@ -26,19 +26,32 @@ export default class Seek extends Phaser.Scene
 
 	create()
 	{
-		this.catAstroPhi = this.sound.add('CatAstroPhi') as Phaser.Sound.HTML5AudioSound
+		this.catAstroPhi = this.sound.add('CatAstroPhi') as Phaser.Sound.WebAudioSound
 
 		this.add.image(400, 300, 'bg')
 
-		const text = this.add.bitmapText(400, 300, 'atari-classic', 'Tap to start', 40)
-		text.x -= Math.round(text.width / 2)
-		text.y -= Math.round(text.height / 2)
+		if (this.sound.locked)
+		{
+			const text = this.add.bitmapText(400, 300, 'atari-classic', 'Tap to start', 40)
+			text.x -= Math.round(text.width / 2)
+			text.y -= Math.round(text.height / 2)
 
-		this.input.once(Phaser.Input.Events.POINTER_UP, () => {
+			this.sound.once(Phaser.Sound.Events.UNLOCKED, () => {
+				this.catAstroPhi.play({
+					seek: 2.550
+				})
+
+				text.visible = false
+
+				this.setup()
+			})
+		}
+		else
+		{
 			this.catAstroPhi.play({
 				seek: 2.550
 			})
-	
+
 			// play() method call above has the same effect as the
 			// two lines below but it is done in only one command
 			// and it is a bit more efficient
@@ -46,10 +59,8 @@ export default class Seek extends Phaser.Scene
 			// catAstroPhi.play();
 			// catAstroPhi.seek = 2.550;
 
-			text.visible = false
-
 			this.setup()
-		})
+		}
 	}
 
 	private setup()

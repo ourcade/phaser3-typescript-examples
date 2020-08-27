@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-import AudioSprite from './AudioSprite'
+import Seek from './Seek'
 
 const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
@@ -8,16 +8,13 @@ const config: Phaser.Types.Core.GameConfig = {
     height: 600,
     backgroundColor: '#2d2d2d',
     parent: 'phaser-example',
-    scene: [AudioSprite],
+    scene: [Seek],
 	scale: {
 		mode: Phaser.Scale.ScaleModes.FIT
 	},
 	render: {
 		pixelArt: true
-	},
-	audio: {
-        disableWebAudio: true
-    }
+	}
 }
 
 export default new Phaser.Game(config)

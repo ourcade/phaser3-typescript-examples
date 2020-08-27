@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 
 export default class MarkersPauseResume extends Phaser.Scene
 {
-	private fx!: Phaser.Sound.HTML5AudioSound
+	private fx!: Phaser.Sound.WebAudioSound
 	private pauseResumeButton!: Phaser.GameObjects.Image
 	private pauseResumeButtonText!: Phaser.GameObjects.BitmapText
 
@@ -33,7 +33,7 @@ export default class MarkersPauseResume extends Phaser.Scene
 		const bg = this.add.image(400, 300, 'bg')
 		bg.setScale(800 / bg.width, 600 / bg.height)
 
-		this.fx = this.sound.add('sfx') as Phaser.Sound.HTML5AudioSound
+		this.fx = this.sound.add('sfx') as Phaser.Sound.WebAudioSound
 
 		for (let i = 0; i < this.markers.length; i++)
 		{

@@ -14,10 +14,7 @@ const config: Phaser.Types.Core.GameConfig = {
 	},
 	render: {
 		pixelArt: true
-	},
-	audio: {
-        disableWebAudio: true
-    }
+	}
 }
 
 export default new Phaser.Game(config)
