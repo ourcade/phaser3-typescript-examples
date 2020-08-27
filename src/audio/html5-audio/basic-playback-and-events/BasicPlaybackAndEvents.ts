@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import createTests from './Tests'
+import WebFontFile from './WebFontFile'
 
 export default class BasicPlaybackAndEvents extends Phaser.Scene
 {
@@ -9,12 +10,7 @@ export default class BasicPlaybackAndEvents extends Phaser.Scene
 
 	preload()
 	{
-		const head  = document.getElementsByTagName('head')[0]
-		const link  = document.createElement('link')
-
-		link.rel  = 'stylesheet'
-		link.href = 'https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy'
-		head.appendChild(link)
+		this.load.addFile(new WebFontFile(this.load, 'Sorts Mill Goudy'))
 
 		this.load.image('prometheus', 'assets/pics/Prometheus Brings Fire To Mankind.jpg')
 
