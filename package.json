@@ -31,6 +31,7 @@
 		"typescript": "^3.8.3"
 	},
 	"dependencies": {
+		"dat.gui": "^0.7.7",
 		"phaser": "^3.24.1",
 		"webfontloader": "^1.6.28"
 	},
