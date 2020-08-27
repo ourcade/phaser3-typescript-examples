@@ -43,12 +43,10 @@ export default class ReuseAudioContext extends Phaser.Scene
 			explosion.on(Phaser.Sound.Events.COMPLETE, () => {
 				setTimeout(() => {
 					this.sys.game.destroy(true)
-	
-					document.addEventListener('mousedown', function newGame () {
+
+					setTimeout(() => {
 						new Phaser.Game(config)
-	
-						document.removeEventListener('mousedown', newGame)
-					})
+					}, 500)
 				})
 			})
 	

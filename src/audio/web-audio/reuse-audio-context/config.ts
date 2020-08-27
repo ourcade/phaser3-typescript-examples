@@ -1,5 +1,3 @@
-import ReuseAudioContext from './ReuseAudioContext'
-
 const getAudioContext = () => {
 	try
 	{
@@ -19,7 +17,6 @@ const config: Phaser.Types.Core.GameConfig = {
     height: 600,
     backgroundColor: '#2d2d2d',
     parent: 'phaser-example',
-    scene: [ReuseAudioContext],
 	scale: {
 		mode: Phaser.Scale.ScaleModes.FIT
 	},
