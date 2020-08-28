@@ -5,8 +5,11 @@
 	"scripts": {
 		"start": "parcel src/${EXAMPLE:-'actions/grid-align'}/index.html -p 8000",
 		"build": "parcel build src/${EXAMPLE:-'actions/grid-align'}/index.html --out-dir dist",
-		"build-data": "node buildData.js",
-		"new-example": "node newExample.js",
+		"build-data": "node npm_scripts/buildData.js",
+		"new-example": "node npm_scripts/newExample.js",
+		"start-root": "parcel src/index.html -p 8000 --no-hmr --no-source-maps",
+		"build-root-index": "node npm_scripts/generateRootIndex.js",
+		"screenshots": "node npm_scripts/generateScreenshots.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint ./src --ext .js,.jsx,.ts,.tsx"
 	},
@@ -26,9 +29,11 @@
 		"fs-extra": "^9.0.1",
 		"lz-string": "^1.4.4",
 		"minimist": ">=1.2.2",
+		"parcel-bundler": "^1.12.4",
 		"parcel-plugin-clean-easy": "^1.0.2",
 		"parcel-plugin-static-files-copy": "^2.4.3",
-		"typescript": "^3.8.3"
+		"typescript": "^3.8.3",
+		"puppeteer": "^5.2.1"
 	},
 	"dependencies": {
 		"dat.gui": "^0.7.7",
