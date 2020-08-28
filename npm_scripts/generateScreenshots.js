@@ -1,6 +1,7 @@
 const ParcelBundler = require('parcel-bundler')
 const puppeteer = require('puppeteer')
 const fs = require('fs-extra')
+const { Command } = require('commander')
 
 /** 
  * @typedef {{
@@ -23,6 +24,13 @@ const fs = require('fs-extra')
 
 /** @type {IExamplesManifestData} */
 const manifest = require('../outputData/manifest.json')
+
+const program = new Command()
+
+program
+  .option('-e, --example <example>', 'path to example', '')
+
+program.parse(process.argv)
 
 const waitForSeconds = (secs) => {
 	return new Promise(resolve => {
@@ -144,7 +152,11 @@ const processGroups = async (group, page, root = '') => {
 	await exampleTask
 }
 
-const generate = async () => {
+/**
+ * 
+ * @param {IGroup} group 
+ */
+const generate = async (group) => {
 	await parcel.serve(8000)
 
 	console.log('Launching browser...')
@@ -157,11 +169,60 @@ const generate = async () => {
 
 	page.setViewport({ width: 1024, height: 768 })
 
-	await processGroups(manifest, page)
+	await processGroups(group, page)
 
 	await browser.close()
 
 	process.exit()
 }
 
-generate()
+/** @type {string} */
+const examplePath = program.example
+
+if (!examplePath)
+{
+	generate(manifest)
+}
+else
+{
+	// this constructs a barebones example manifest with just the specific example
+	// but all the groups that led up to it; in theory one could factor out the
+	// specific code for doing one example but... 🤷‍♂️
+	const parts = examplePath.split('/')
+	const bareGroup = { groups: [], examples: [] }
+	const size = parts.length
+
+	let group = manifest
+	let lastGroup = bareGroup
+
+	for (let i = 0; i < size; ++i)
+	{
+		const part = parts[i]
+		if (i === size - 1)
+		{
+			const example = group.examples.find(e => e.name === part)
+
+			// this is the example
+			lastGroup.examples.push(example)
+			break
+		}
+
+		group = group.groups.find(g => g.name === part)
+
+		if (!group)
+		{
+			throw new Error(`example (${examplePath}) could not be found`)
+		}
+
+		const g = {
+			name: group.name,
+			groups: [],
+			examples: []
+		}
+
+		lastGroup.groups.push(g)
+		lastGroup = g
+	}
+
+	generate(bareGroup)
+}
