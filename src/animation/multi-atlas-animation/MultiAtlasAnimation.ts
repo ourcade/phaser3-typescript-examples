@@ -6,8 +6,8 @@ export default class MultiAtlasAnimation extends Phaser.Scene
 	{
     	this.load.multiatlas({
 			key:'cybercity',
-			atlasURL: 'assets/animations/cybercity/cybercity-multi.json',
-			path: 'assets/animations/cybercity'
+			atlasURL: '/assets/animations/cybercity/cybercity-multi.json',
+			path: '/assets/animations/cybercity'
 		})
 	}
 

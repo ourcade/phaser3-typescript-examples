@@ -4,15 +4,15 @@ export default class AudioSprite extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('title', 'assets/pics/catastrophi.png')
+		this.load.image('title','/assets/pics/catastrophi.png')
 
-		this.load.spritesheet('button', 'assets/ui/flixel-button.png', { frameWidth: 80, frameHeight: 20 })
+		this.load.spritesheet('button','/assets/ui/flixel-button.png', { frameWidth: 80, frameHeight: 20 })
 
-		this.load.bitmapFont('nokia', 'assets/fonts/bitmap/nokia16black.png', 'assets/fonts/bitmap/nokia16black.xml')
+		this.load.bitmapFont('nokia','/assets/fonts/bitmap/nokia16black.png','/assets/fonts/bitmap/nokia16black.xml')
 
-		this.load.audioSprite('sfx', 'assets/audio/SoundEffects/fx_mixdown.json', [
-			'assets/audio/SoundEffects/fx_mixdown.ogg',
-			'assets/audio/SoundEffects/fx_mixdown.mp3'
+		this.load.audioSprite('sfx','/assets/audio/SoundEffects/fx_mixdown.json', [
+			'/assets/audio/SoundEffects/fx_mixdown.ogg',
+			'/assets/audio/SoundEffects/fx_mixdown.mp3'
 		])
 	}
 

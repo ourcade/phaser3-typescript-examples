@@ -6,7 +6,7 @@ export default class CameraTest extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('einstein', 'assets/pics/ra-einstein.png')
+		this.load.image('einstein','/assets/pics/ra-einstein.png')
 	}
 
 	create()

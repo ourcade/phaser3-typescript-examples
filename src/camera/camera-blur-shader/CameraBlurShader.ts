@@ -7,8 +7,8 @@ export default class CameraBlurShader extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('volcano', 'assets/pics/bw-face.png')
-		this.load.image('hotdog', 'assets/sprites/hotdog.png')
+		this.load.image('volcano','/assets/pics/bw-face.png')
+		this.load.image('hotdog','/assets/sprites/hotdog.png')
 
 		const renderer = this.game.renderer as Phaser.Renderer.WebGL.WebGLRenderer
 

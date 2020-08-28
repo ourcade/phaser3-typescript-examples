@@ -2,12 +2,12 @@ import Phaser from 'phaser'
 
 export default class GridAlign extends Phaser.Scene
 {
-	preload ()
+	preload()
 	{
-		this.load.spritesheet('diamonds', 'assets/sprites/diamonds32x24x5.png', { frameWidth: 32, frameHeight: 24 });
+		this.load.spritesheet('diamonds', '/assets/sprites/diamonds32x24x5.png', { frameWidth: 32, frameHeight: 24 });
 	}
 
-	create ()
+	create()
 	{
 		const group = this.add.group()
 

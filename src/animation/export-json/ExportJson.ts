@@ -4,7 +4,7 @@ export default class ExportJson extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.atlas('gems', 'assets/tests/columns/gems.png', 'assets/tests/columns/gems.json')
+		this.load.atlas('gems','/assets/tests/columns/gems.png','/assets/tests/columns/gems.json')
 	}
 
 	create()

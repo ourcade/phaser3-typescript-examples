@@ -4,7 +4,7 @@ export default class Lazer extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.atlas('lazer', 'assets/animations/lazer/lazer.png', 'assets/animations/lazer/lazer.json')
+		this.load.atlas('lazer','/assets/animations/lazer/lazer.png','/assets/animations/lazer/lazer.json')
 	}
 
 	create()

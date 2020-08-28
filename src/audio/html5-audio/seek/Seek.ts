@@ -10,17 +10,17 @@ export default class Seek extends Phaser.Scene
 
 	preload()
 	{
-		this.load.bitmapFont('atari-classic', 'assets/fonts/bitmap/atari-classic.png', 'assets/fonts/bitmap/atari-classic.xml')
+		this.load.bitmapFont('atari-classic','/assets/fonts/bitmap/atari-classic.png','/assets/fonts/bitmap/atari-classic.xml')
 
-		this.load.image('bg', 'assets/animations/nyan/bg.png')
+		this.load.image('bg','/assets/animations/nyan/bg.png')
 
-		this.load.image('rainbow', 'assets/animations/nyan/rainbow.png')
+		this.load.image('rainbow','/assets/animations/nyan/rainbow.png')
 
-		this.load.spritesheet('cat', 'assets/animations/nyan/cat.png', { frameWidth: 97, frameHeight: 59 })
+		this.load.spritesheet('cat','/assets/animations/nyan/cat.png', { frameWidth: 97, frameHeight: 59 })
 
 		this.load.audio('CatAstroPhi', [
-			'assets/audio/CatAstroPhi_shmup_normal.ogg',
-			'assets/audio/CatAstroPhi_shmup_normal.mp3'
+			'/assets/audio/CatAstroPhi_shmup_normal.ogg',
+			'/assets/audio/CatAstroPhi_shmup_normal.mp3'
 		])
 	}
 

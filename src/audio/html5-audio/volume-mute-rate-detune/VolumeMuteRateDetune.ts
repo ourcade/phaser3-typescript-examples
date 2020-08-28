@@ -21,7 +21,7 @@ export default class VolumeMuteRateDetune extends Phaser.Scene
 
 	preload()
 	{
-		this.load.bitmapFont('atari-classic', 'assets/fonts/bitmap/atari-classic.png', 'assets/fonts/bitmap/atari-classic.xml')
+		this.load.bitmapFont('atari-classic','/assets/fonts/bitmap/atari-classic.png','/assets/fonts/bitmap/atari-classic.xml')
 
 		// Loading horse animation
 		for (let i = 0; i < horseFrames.length; i++)
@@ -31,13 +31,13 @@ export default class VolumeMuteRateDetune extends Phaser.Scene
 
 		// Loading music
 		this.load.audio('left', [
-			'assets/audio/Rossini - William Tell Overture (8 Bits Version)/left.ogg',
-			'assets/audio/Rossini - William Tell Overture (8 Bits Version)/left.mp3'
+			'/assets/audio/Rossini - William Tell Overture (8 Bits Version)/left.ogg',
+			'/assets/audio/Rossini - William Tell Overture (8 Bits Version)/left.mp3'
 		])
 
 		this.load.audio('right', [
-			'assets/audio/Rossini - William Tell Overture (8 Bits Version)/right.ogg',
-			'assets/audio/Rossini - William Tell Overture (8 Bits Version)/right.mp3'
+			'/assets/audio/Rossini - William Tell Overture (8 Bits Version)/right.ogg',
+			'/assets/audio/Rossini - William Tell Overture (8 Bits Version)/right.mp3'
 		])
 	}
 

@@ -12,16 +12,16 @@ export default class BasicPlaybackAndEvents extends Phaser.Scene
 	{
 		this.load.addFile(new WebFontFile(this.load, 'Sorts Mill Goudy'))
 
-		this.load.image('prometheus', 'assets/pics/Prometheus Brings Fire To Mankind.jpg')
+		this.load.image('prometheus','/assets/pics/Prometheus Brings Fire To Mankind.jpg')
 
 		this.load.audio('overture', [
-			'assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/Overture.ogg',
-			'assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/Overture.mp3'
+			'/assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/Overture.ogg',
+			'/assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/Overture.mp3'
 		], { instances: 2 })
 
-		this.load.audioSprite('creatures', 'assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.json', [
-			'assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.ogg',
-			'assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.mp3'
+		this.load.audioSprite('creatures','/assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.json', [
+			'/assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.ogg',
+			'/assets/audio/Ludwig van Beethoven - The Creatures of Prometheus, Op. 43/sprites.mp3'
 		])
 	}
 

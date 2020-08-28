@@ -4,7 +4,7 @@ export default class CameraFadeInAndOut extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('robota', 'assets/pics/robota-uxo-by-made-of-bomb.jpg')
+		this.load.image('robota','/assets/pics/robota-uxo-by-made-of-bomb.jpg')
 	}
 
 	create()

@@ -8,8 +8,8 @@ export default class BackgroundColorInterpolate extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('star', 'assets/demoscene/star2.png')
-    	this.load.image('dude', 'assets/sprites/phaser-dude.png')
+		this.load.image('star','/assets/demoscene/star2.png')
+    	this.load.image('dude','/assets/sprites/phaser-dude.png')
 	}
 
 	create()

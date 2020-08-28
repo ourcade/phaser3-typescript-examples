@@ -4,7 +4,7 @@ export default class GenerateFrames extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.spritesheet('boom', 'assets/sprites/explosion.png', { frameWidth: 64, frameHeight: 64, endFrame: 23 })
+		this.load.spritesheet('boom','/assets/sprites/explosion.png', { frameWidth: 64, frameHeight: 64, endFrame: 23 })
 	}
 
 	create()

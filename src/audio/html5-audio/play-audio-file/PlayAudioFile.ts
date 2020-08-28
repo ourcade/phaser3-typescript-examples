@@ -5,11 +5,11 @@ export default class PlayAudioFile extends Phaser.Scene
 	preload()
 	{
 		this.load.audio('theme', [
-			'assets/audio/oedipus_wizball_highscore.ogg',
-			'assets/audio/oedipus_wizball_highscore.mp3'
+			'/assets/audio/oedipus_wizball_highscore.ogg',
+			'/assets/audio/oedipus_wizball_highscore.mp3'
 		])
 	
-		this.load.image('wizball', 'assets/sprites/wizball.png')
+		this.load.image('wizball','/assets/sprites/wizball.png')
 	}
 
 	create()

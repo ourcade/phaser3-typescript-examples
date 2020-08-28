@@ -4,7 +4,7 @@ export default class JsonFile extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.json('jsonData', 'assets/atlas/megaset-0.json')
+		this.load.json('jsonData','/assets/atlas/megaset-0.json')
 	}
 
 	create()

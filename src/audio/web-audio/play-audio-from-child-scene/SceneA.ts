@@ -10,13 +10,13 @@ export default class SceneA extends Phaser.Scene
 	preload()
 	{
 		this.load.audio('jungle', [
-            'assets/audio/jungle.ogg',
-            'assets/audio/jungle.mp3'
+            '/assets/audio/jungle.ogg',
+            '/assets/audio/jungle.mp3'
         ])
 
-        this.load.image('wizball', 'assets/sprites/wizball.png')
+        this.load.image('wizball','/assets/sprites/wizball.png')
 
-        this.load.bitmapFont('atari-classic', 'assets/fonts/bitmap/atari-classic.png', 'assets/fonts/bitmap/atari-classic.xml')
+        this.load.bitmapFont('atari-classic','/assets/fonts/bitmap/atari-classic.png','/assets/fonts/bitmap/atari-classic.xml')
 	}
 
 	create()

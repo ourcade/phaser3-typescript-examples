@@ -8,7 +8,7 @@ export default class AnimationData extends Phaser.Scene
 
 	preload()
 	{
-		this.load.spritesheet('mummy', 'assets/animations/mummy37x45.png', { frameWidth: 37, frameHeight: 45 })
+		this.load.spritesheet('mummy','/assets/animations/mummy37x45.png', { frameWidth: 37, frameHeight: 45 })
 	}
 
 	create()

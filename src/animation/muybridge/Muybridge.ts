@@ -4,7 +4,7 @@ export default class Muybridge extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.spritesheet('muybridge', 'assets/animations/muybridge01.png', { frameWidth: 119, frameHeight: 228 })
+		this.load.spritesheet('muybridge','/assets/animations/muybridge01.png', { frameWidth: 119, frameHeight: 228 })
 	}
 
 	create()

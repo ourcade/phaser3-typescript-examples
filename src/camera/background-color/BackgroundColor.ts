@@ -8,7 +8,7 @@ export default class BackgroundColor extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('image', 'assets/sprites/mushroom2.png')
+		this.load.image('image','/assets/sprites/mushroom2.png')
 	}
 
 	create()

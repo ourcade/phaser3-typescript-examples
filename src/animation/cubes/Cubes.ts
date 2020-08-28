@@ -4,7 +4,7 @@ export default class Cubes extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.atlas('cube', 'assets/animations/cube.png', 'assets/animations/cube.json')
+		this.load.atlas('cube','/assets/animations/cube.png','/assets/animations/cube.json')
 	}
 
 	create()

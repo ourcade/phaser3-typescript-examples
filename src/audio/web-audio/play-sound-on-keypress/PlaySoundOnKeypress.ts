@@ -4,9 +4,9 @@ export default class PlaySoundOnKeypress extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('touhou', 'assets/pics/touhou1.png')
+		this.load.image('touhou','/assets/pics/touhou1.png')
 
-		this.load.setPath('assets/audio/tech')
+		this.load.setPath('/assets/audio/tech')
 
 		this.load.audio('bass', ['bass.ogg', 'bass.mp3'])
 		this.load.audio('drums', ['drums.ogg', 'drums.mp3'])

@@ -13,7 +13,7 @@ export default class CameraShaderTest extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('einstein', 'assets/pics/ra-einstein.png')
+		this.load.image('einstein','/assets/pics/ra-einstein.png')
 
 		const renderer = this.game.renderer as Phaser.Renderer.WebGL.WebGLRenderer
 

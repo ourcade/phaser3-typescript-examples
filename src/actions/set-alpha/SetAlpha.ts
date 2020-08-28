@@ -4,7 +4,7 @@ export default class SetAlpha extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.spritesheet('diamonds', 'assets/sprites/diamonds32x24x5.png', { frameWidth: 32, frameHeight: 24 })
+		this.load.spritesheet('diamonds','/assets/sprites/diamonds32x24x5.png', { frameWidth: 32, frameHeight: 24 })
 	}
 
 	create()

@@ -5,9 +5,9 @@ export default class ReuseAudioContext extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.spritesheet('explosion', 'assets/atlas/trimsheet/explosion.png', { frameWidth: 64, frameHeight: 64 })
-		this.load.spritesheet('bomb', 'assets/sprites/xenon2_bomb.png', { frameWidth: 8, frameHeight: 16 })
-		this.load.audio('explosion', ['assets/audio/SoundEffects/explosion.mp3'])
+		this.load.spritesheet('explosion','/assets/atlas/trimsheet/explosion.png', { frameWidth: 64, frameHeight: 64 })
+		this.load.spritesheet('bomb','/assets/sprites/xenon2_bomb.png', { frameWidth: 8, frameHeight: 16 })
+		this.load.audio('explosion', ['/assets/audio/SoundEffects/explosion.mp3'])
 	}
 
 	create()

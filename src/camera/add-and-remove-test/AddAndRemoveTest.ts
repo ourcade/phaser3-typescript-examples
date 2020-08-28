@@ -12,7 +12,7 @@ export default class AddAndRemoveTest extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('CherilPerils', 'assets/tests/camera/CherilPerils.png')
+		this.load.image('CherilPerils','/assets/tests/camera/CherilPerils.png')
 	}
 
 	create()

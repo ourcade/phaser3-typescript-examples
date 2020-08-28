@@ -11,8 +11,8 @@ export default class ShiftPosition extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('sky', 'assets/skies/deepblue.png')
-    	this.load.image('ball', 'assets/demoscene/ball-tlb.png')
+		this.load.image('sky','/assets/skies/deepblue.png')
+    	this.load.image('ball','/assets/demoscene/ball-tlb.png')
 	}
 
 	create()

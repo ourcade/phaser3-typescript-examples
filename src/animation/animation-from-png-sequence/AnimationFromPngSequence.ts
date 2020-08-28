@@ -4,10 +4,10 @@ export default class AnimationFromPngSequence extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('cat1', 'assets/animations/cat1.png')
-		this.load.image('cat2', 'assets/animations/cat2.png')
-		this.load.image('cat3', 'assets/animations/cat3.png')
-		this.load.image('cat4', 'assets/animations/cat4.png')
+		this.load.image('cat1','/assets/animations/cat1.png')
+		this.load.image('cat2','/assets/animations/cat2.png')
+		this.load.image('cat3','/assets/animations/cat3.png')
+		this.load.image('cat4','/assets/animations/cat4.png')
 	}
 
 	create()

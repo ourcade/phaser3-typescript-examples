@@ -4,8 +4,8 @@ export default class FromJson extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.atlas('gems', 'assets/tests/columns/gems.png', 'assets/tests/columns/gems.json')
-    	this.load.json('gemData', 'assets/animations/gems.json')
+		this.load.atlas('gems','/assets/tests/columns/gems.png','/assets/tests/columns/gems.json')
+    	this.load.json('gemData','/assets/animations/gems.json')
 	}
 
 	create()

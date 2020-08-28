@@ -9,7 +9,7 @@ export default class IncXLayers extends Phaser.Scene
 
 	preload()
 	{
-		this.load.atlas('atlas', 'assets/tests/fruit/veg.png', 'assets/tests/fruit/veg.json');
+		this.load.atlas('atlas','/assets/tests/fruit/veg.png','/assets/tests/fruit/veg.json');
 	}
 
 	create()

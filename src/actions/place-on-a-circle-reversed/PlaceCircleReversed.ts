@@ -14,7 +14,7 @@ export default class PlaceCircleReversed extends Phaser.Scene
 
 	preload ()
 	{
-		this.load.image('ball', 'assets/sprites/shinyball.png')
+		this.load.image('ball','/assets/sprites/shinyball.png')
 	}
 
 	create ()

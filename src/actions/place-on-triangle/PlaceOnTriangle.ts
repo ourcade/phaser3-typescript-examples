@@ -4,7 +4,7 @@ export default class PlaceOnTriangle extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('ball', 'assets/sprites/chunk.png')
+		this.load.image('ball','/assets/sprites/chunk.png')
 	}
 
 	create()

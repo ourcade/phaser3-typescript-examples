@@ -10,8 +10,8 @@ export default class SceneB extends Phaser.Scene
 	preload()
 	{
 		this.load.audio('theme', [
-            'assets/audio/oedipus_wizball_highscore.ogg',
-            'assets/audio/oedipus_wizball_highscore.mp3'
+            '/assets/audio/oedipus_wizball_highscore.ogg',
+            '/assets/audio/oedipus_wizball_highscore.mp3'
         ])
 	}
 

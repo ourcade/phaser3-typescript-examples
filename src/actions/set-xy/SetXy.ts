@@ -4,7 +4,7 @@ export default class SetXy extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('phaser', 'assets/sprites/phaser2.png')
+		this.load.image('phaser','/assets/sprites/phaser2.png')
 	}
 
 	create()

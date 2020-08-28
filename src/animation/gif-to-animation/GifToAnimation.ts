@@ -16,7 +16,7 @@ export default class GifToAnimation extends Phaser.Scene
 	{
 		// NOTE: official examples use multiatlas but the sao0.json and sao1.json
 		// files are TexturePacker v1.0 and don't load properly with multiatlas
-    	this.load.atlas('sao', 'assets/animations/sao1.png', 'assets/animations/sao1.json')
+    	this.load.atlas('sao','/assets/animations/sao1.png','/assets/animations/sao1.json')
 	}
 
 	create()

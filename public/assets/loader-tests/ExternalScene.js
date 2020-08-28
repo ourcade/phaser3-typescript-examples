@@ -7,8 +7,8 @@ class ExternalScene extends Phaser.Scene {
 
     preload ()
     {
-        this.load.image('face', 'assets/pics/bw-face.png');
-        this.load.image('arrow', 'assets/sprites/longarrow.png');
+        this.load.image('face','/assets/pics/bw-face.png');
+        this.load.image('arrow','/assets/sprites/longarrow.png');
     }
 
     create ()

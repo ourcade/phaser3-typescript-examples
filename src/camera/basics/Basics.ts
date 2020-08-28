@@ -6,7 +6,7 @@ export default class Basics extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('robot', 'assets/pics/robota-uxo-by-made-of-bomb.jpg')
+		this.load.image('robot','/assets/pics/robota-uxo-by-made-of-bomb.jpg')
 	}
 
 	create()

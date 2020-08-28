@@ -8,7 +8,7 @@ export default class CameraEffects extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('CherilPerils', 'assets/tests/camera/CherilPerils.png')
+		this.load.image('CherilPerils','/assets/tests/camera/CherilPerils.png')
 	}
 
 	create()

@@ -4,7 +4,7 @@ export default class XmlFile extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.xml('data', 'assets/loader-tests/test.xml')
+		this.load.xml('data','/assets/loader-tests/test.xml')
 	}
 
 	create()

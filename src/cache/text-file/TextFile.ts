@@ -4,7 +4,7 @@ export default class TextFile extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.text('data', 'assets/loader-tests/test.txt')
+		this.load.text('data','/assets/loader-tests/test.txt')
 	}
 
 	create()

@@ -4,7 +4,7 @@ export default class ScaledAnimation extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.atlas('gems', 'assets/animations/diamond.png', 'assets/animations/diamond.json')
+		this.load.atlas('gems','/assets/animations/diamond.png','/assets/animations/diamond.json')
 	}
 
 	create()

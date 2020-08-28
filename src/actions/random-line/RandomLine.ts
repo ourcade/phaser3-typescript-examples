@@ -4,7 +4,7 @@ export default class RandomLine extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('orb', 'assets/sprites/orb-blue.png')
+		this.load.image('orb','/assets/sprites/orb-blue.png')
 	}
 
 	create()

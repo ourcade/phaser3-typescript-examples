@@ -7,7 +7,7 @@ export default class PlaceCircleMulti extends Phaser.Scene
 
 	preload()
 	{
-		this.load.spritesheet('balls', 'assets/sprites/balls.png', { frameWidth: 17, frameHeight: 17 })
+		this.load.spritesheet('balls','/assets/sprites/balls.png', { frameWidth: 17, frameHeight: 17 })
 	}
 
 	create()

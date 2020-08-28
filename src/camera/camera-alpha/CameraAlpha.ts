@@ -6,7 +6,7 @@ export default class CameraAlpha extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('map', 'assets/tests/camera/earthbound-scarab.png')
+		this.load.image('map','/assets/tests/camera/earthbound-scarab.png')
 	}
 
 	create()
