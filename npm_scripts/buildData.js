@@ -2,6 +2,9 @@ const dirTree = require('directory-tree')
 const fs = require('fs-extra')
 const path = require('path')
 const LZString = require('lz-string')
+const trim = require('lodash/trim')
+
+const packageJson = require('../package.json')
 
 /**
  * @param {directoryTree.DirectoryTree} dir 
@@ -12,6 +15,8 @@ const isExampleRoot = (dir) => {
 
 	return !!mainFile
 }
+
+const DEFAULT_PHASER_VERSION = trim(packageJson.dependencies.phaser, ' ^') || '3.24.1'
 
 /**
  * @param {directoryTree.DirectoryTree} dir 
@@ -51,7 +56,10 @@ const processDirectory = (dir, outDir, manifest) => {
 			files: [],
 			assets: [],
 			entryPoint: 'main.ts',
-			showFirst: 'main.ts'
+			showFirst: 'main.ts',
+			config: {
+				phaserVersion: DEFAULT_PHASER_VERSION
+			}
 		}
 
 		files.forEach(file => {
@@ -61,6 +69,13 @@ const processDirectory = (dir, outDir, manifest) => {
 			{
 				const assets = contents.split('\n').filter(item => !!item)
 				data.assets = [...data.assets, ...assets]
+				return
+			}
+
+			if (file.name === '.config')
+			{
+				const config = JSON.parse(contents)
+				Object.assign(data.config, config.phaserVersion)
 				return
 			}
 

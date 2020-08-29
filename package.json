@@ -27,13 +27,14 @@
 		"directory-tree": "^2.2.4",
 		"eslint": "^6.8.0",
 		"fs-extra": "^9.0.1",
+		"lodash": "^4.17.20",
 		"lz-string": "^1.4.4",
 		"minimist": ">=1.2.2",
 		"parcel-bundler": "^1.12.4",
 		"parcel-plugin-clean-easy": "^1.0.2",
 		"parcel-plugin-static-files-copy": "^2.4.3",
-		"typescript": "^3.8.3",
-		"puppeteer": "^5.2.1"
+		"puppeteer": "^5.2.1",
+		"typescript": "^3.8.3"
 	},
 	"dependencies": {
 		"dat.gui": "^0.7.7",
