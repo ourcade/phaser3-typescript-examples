@@ -66,7 +66,7 @@ export default class CamerasFromStateConfig extends Phaser.Scene
 
 	preload()
 	{
-		this.load.image('mech', 'assets/pics/titan-mech.png')
+		this.load.image('mech', '/assets/pics/titan-mech.png')
 	}
 
 	create()

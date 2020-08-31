@@ -40,7 +40,8 @@ const waitForSeconds = (secs) => {
 
 const parcel = new ParcelBundler('src/index.html', {
 	hmr: false,
-	sourceMaps: false
+	sourceMaps: false,
+	watch: false
 })
 
 /**
@@ -73,11 +74,11 @@ const processGroups = async (group, page, root = '') => {
 	{
 		const example = examples[i]
 		exampleTask = exampleTask.then(async () => {
-			console.log('Navigating...')
-
 			const url = root
 				? `http://localhost:8000/${root}/${example.name}`
 				: `http://localhost:8000/${example.name}`
+
+				console.log(`Navigating to ${url}/index.html...`)
 
 			await page.goto(`${url}/index.html`)
 
@@ -105,12 +106,13 @@ const processGroups = async (group, page, root = '') => {
 				return { left: x, top: y, width, height, id: element.id }
 			}, '#phaser-example')
 
-			console.log(`phaser-example located at (${rect.left}, ${rect.top}) ${rect.width} x ${rect.height} ...`)
-
 			if (!rect)
 			{
-				throw new Error('No element with id "phaser-example" exists on the page')
+				return Promise.resolve()
+				// throw new Error('No element with id "phaser-example" exists on the page')
 			}
+
+			console.log(`phaser-example located at (${rect.left}, ${rect.top}) ${rect.width} x ${rect.height} ...`)
 
 			console.log('Mouse clicks...')
 

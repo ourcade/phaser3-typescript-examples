@@ -56,8 +56,8 @@ const processDirectory = (dir, outDir, manifest) => {
 			files: [],
 			assets: [],
 			entryPoint: 'main.ts',
-			showFirst: 'main.ts',
 			config: {
+				showFirst: 'main.ts',
 				phaserVersion: DEFAULT_PHASER_VERSION
 			}
 		}
@@ -72,19 +72,19 @@ const processDirectory = (dir, outDir, manifest) => {
 				return
 			}
 
-			if (file.name === '.config')
+			if (file.name === '.config.json')
 			{
 				const config = JSON.parse(contents)
-				Object.assign(data.config, config.phaserVersion)
+				Object.assign(data.config, config)
 				return
 			}
 
 			// set something other than main.ts as file to show
 			if (file.name !== 'main.ts' && file.extension === '.ts')
 			{
-				if (data.showFirst === 'main.ts')
+				if (data.config.showFirst === 'main.ts')
 				{
-					data.showFirst = file.name
+					data.config.showFirst = file.name
 				}
 			}
 
