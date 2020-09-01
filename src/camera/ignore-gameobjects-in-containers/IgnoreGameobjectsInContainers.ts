@@ -4,9 +4,9 @@ export default class IgnoreGameobjectsInContainers extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image('asuna', 'assets/sprites/asuna_by_vali233.png')
-		this.load.image('brain', 'assets/sprites/brain.png')
-		this.load.bitmapFont('desyrel', 'assets/fonts/bitmap/desyrel.png', 'assets/fonts/bitmap/desyrel.xml')
+		this.load.image('asuna', '/assets/sprites/asuna_by_vali233.png')
+		this.load.image('brain', '/assets/sprites/brain.png')
+		this.load.bitmapFont('desyrel', '/assets/fonts/bitmap/desyrel.png', '/assets/fonts/bitmap/desyrel.xml')
 	}
 
 	create()

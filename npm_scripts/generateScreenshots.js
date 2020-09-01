@@ -29,6 +29,7 @@ const program = new Command()
 
 program
   .option('-e, --example <example>', 'path to example', '')
+  .option('-e, --group <group>', 'group or groups to process', '')
 
 program.parse(process.argv)
 
@@ -181,8 +182,17 @@ const generate = async (group) => {
 /** @type {string} */
 const examplePath = program.example
 
-if (!examplePath)
+/** @type {string} */
+const group = program.group
+
+if (!examplePath && !group)
 {
+	generate(manifest)
+}
+else if (group)
+{
+	const parts = group.split(',')
+	manifest.groups = manifest.groups.filter(g => parts.includes(g.name))
 	generate(manifest)
 }
 else
