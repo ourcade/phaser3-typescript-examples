@@ -1,3 +1,5 @@
+![phaser3-plus-typescript](https://user-images.githubusercontent.com/2236153/91917791-32c49580-ec7e-11ea-91c0-335e5f884bc7.png)
+
 # Phaser 3 TypeScript Examples
 > Various examples and uses for Phaser 3 features in TypeScript for game development
 
