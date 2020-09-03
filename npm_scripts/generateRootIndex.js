@@ -1,4 +1,5 @@
 const fs = require('fs-extra')
+const { Command } = require('commander')
 
 /** 
  * @typedef {{
@@ -21,6 +22,13 @@ const fs = require('fs-extra')
 
 /** @type {IExamplesManifestData} */
 const manifest = require('../outputData/manifest.json')
+
+const program = new Command()
+
+program
+  .option('-e, --group <group>', 'group or groups to include', '')
+
+program.parse(process.argv)
 
 /**
  * 
@@ -50,6 +58,15 @@ const processGroups = (group, paths = [], root = '') => {
 	})
 
 	return paths
+}
+
+/** @type {string} */
+const group = program.group
+
+if (group)
+{
+	const parts = group.split(',')
+	manifest.groups = manifest.groups.filter(g => parts.includes(g.name))
 }
 
 const paths = processGroups(manifest)
