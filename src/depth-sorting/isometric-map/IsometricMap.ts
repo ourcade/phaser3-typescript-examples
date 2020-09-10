@@ -1,6 +1,5 @@
 import Phaser from 'phaser'
 
-import Sekelton from './Skeleton'
 import Skeleton from './Skeleton'
 
 export default class IsometricMap extends Phaser.Scene
